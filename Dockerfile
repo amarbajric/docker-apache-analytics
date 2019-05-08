@@ -46,7 +46,4 @@ RUN curl -sL --retry 3 \
  && chown -R root:root $SPARK_HOME
 
 WORKDIR $SPARK_HOME
-
-ENV SPARK_INSTANCE_TYPE $SPARK_INSTANCE_TYPE
-ENV SPARK_MASTER_NODE $SPARK_MASTER_NODE
-CMD ["bin/spark-class", "org.apache.spark.deploy.${SPARK_INSTANCE_TYPE}.${SPARK_INSTANCE_TYPE^}", "${SPARK_MASTER_NODE}"]
+ENTRYPOINT ["bin/spark-class"]
