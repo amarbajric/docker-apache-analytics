@@ -1,8 +1,7 @@
 FROM debian:stretch
 
 RUN apt-get update \
- && apt-get install procps \
- && apt-get install -y curl unzip \
+ && apt-get install -y curl unzip procps \
     python3 python3-setuptools \
  && ln -s /usr/bin/python3 /usr/bin/python \
  && easy_install3 pip py4j \
