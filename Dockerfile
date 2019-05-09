@@ -1,6 +1,7 @@
 FROM debian:stretch
 
 RUN apt-get update \
+ && apt-get install procps \
  && apt-get install -y curl unzip \
     python3 python3-setuptools \
  && ln -s /usr/bin/python3 /usr/bin/python \
