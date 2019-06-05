@@ -1,5 +1,8 @@
 FROM debian:stretch as build
 
+RUN apt-get update \
+&& apt-get install -y curl unzip procps \
+
 # SPARK
 ENV SPARK_VERSION 2.4.3
 ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-hadoop2.7
