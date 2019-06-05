@@ -19,8 +19,8 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-HADOOP
-Hadoop is basically not executed, but is downloaded as Spark (eventually) needs it.
+# HADOOP
+# Hadoop is basically not executed, but is downloaded as Spark (eventually) needs it.
 ENV HADOOP_VERSION 3.1.2
 ENV HADOOP_HOME /usr/hadoop-$HADOOP_VERSION
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
