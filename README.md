@@ -5,7 +5,8 @@
 # Apache Analytics Docker Images
 This repository contains `Dockerfiles` for some Apache projects that are mostly used for analytics tasks.
 Currently, this repository includes the following custom docker base images:
-- Apache Spark
+- Apache Spark (Standalone mode & Kubernetes mode)
+- Apache Flink (Job Cluster Example)
 - Apacke Zeppelin
 
 ## Apache Spark Docker Image (Standalone mode)
@@ -25,6 +26,10 @@ Fine-tune configuration maybe achieved by mounting `/spark/conf/spark-defaults.c
 - `/spark/work` - directory to use for scratch space and job output logs; only on worker. Can be overridden via `-w path` CLI argument.
 - `/tmp` - directory to use for "scratch" space in Spark, including map output files and RDDs that get stored on disk (`spark.local.dir` setting).
 
+
+## Apache Flink
+The Flink Dockerfile is based upon the official docker image and only adds a custom JAR file. The purpose of this image is to test the deployment and functionality of a Flink job cluster in a dockerized environment.
+The included `wordcount.jar` has one Object called `WordCount` that is under the classname `at.fhj.flinkexample`. So, the `main()` function resides can be found under the classname `at.fhj.flinkexample.WordCount`. The Flink job counts the occurence of words of a String and outputs the results to `/opt/results/`.
 
 ## Apache Zeppelin
 A Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala and more.
