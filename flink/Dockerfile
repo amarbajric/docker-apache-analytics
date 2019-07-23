@@ -1,3 +1,3 @@
 FROM flink:latest
 
-COPY ./wordcount.jar /opt/flink/lib
+COPY wordcount.jar /opt/flink/lib
