@@ -4,7 +4,7 @@ RUN apt-get update \
 && apt-get install -y curl unzip procps
 
 # SPARK
-ENV SPARK_VERSION 2.4.3
+ENV SPARK_VERSION 2.4.4
 ENV SPARK_PACKAGE spark-${SPARK_VERSION}-bin-hadoop2.7
 ENV SPARK_HOME /usr/spark
 ENV PATH $PATH:${SPARK_HOME}/bin:${SPARK_HOME}/sbin
